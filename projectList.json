@@ -1,0 +1,9 @@
+{ "projects": [{
+    "title": "First Project",
+    "creator": "Kory and Elise",
+    "description": "This is our project",
+    "image": "http://globalgamejam.org/sites/default/files/styles/game_sidebar__normal/public/game/featured_image/promo_5.png?itok=9dymM8JD",
+    "goal": 4000,
+    "daysLeft": 20
+  }]
+}

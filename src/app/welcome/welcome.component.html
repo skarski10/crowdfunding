@@ -1,0 +1,9 @@
+<h2>Projects</h2>
+
+<div *ngFor="let project of projects | async" class="panel panel-default">
+  <div class="panel-body">
+    {{project.title}}
+    {{project.creator}}
+    {{project.image}}
+  </div>
+</div>
