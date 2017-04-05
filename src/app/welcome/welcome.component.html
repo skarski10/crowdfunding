@@ -1,9 +1,9 @@
 <h2>Projects</h2>
 
-<div *ngFor="let project of projects | async" class="panel panel-default">
+<div *ngFor="let project of projects | async" (click)="goToDetailPage(project)" class="panel panel-default">
   <div class="panel-body">
-    {{project.title}}
-    {{project.creator}}
-    {{project.image}}
+    {{project.title}}<br>
+    {{project.creator}}<br>
+    <img src="{{project.image}}" alt="" />
   </div>
 </div>
