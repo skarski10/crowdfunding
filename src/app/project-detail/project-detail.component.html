@@ -1,6 +1,7 @@
 <h1>
   {{(projectToDisplay | async)?.title}}
 </h1>
+<button type="button" name="button" class="btn btn-warning" (click)="clickEditButton({{projectToDisplay}})">Edit</button>
 <div class="projectImage"><img src='{{(projectToDisplay | async)?.image}}' alt="" /></div>
 By: {{(projectToDisplay | async)?.creator}}
 {{(projectToDisplay | async)?.description}}
