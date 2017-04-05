@@ -15,7 +15,7 @@ export class WelcomeComponent {
 
   constructor(private router: Router, private projectService: ProjectService) { }
 
-  goToDetailPage(project: Project){
-    this.router.navigate(['projects', project.id])
+  goToDetailPage(clickedProject: Project){
+    this.router.navigate(['projects', clickedProject.$key]);
   };
 }

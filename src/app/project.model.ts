@@ -1,5 +1,4 @@
 export class Project {
-  public id: number;
   constructor(
     public title: string,
     public creator: string,
