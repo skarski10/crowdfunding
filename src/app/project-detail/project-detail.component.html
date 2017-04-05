@@ -1,3 +1,8 @@
 <h1>
   {{(projectToDisplay | async)?.title}}
 </h1>
+<div class="projectImage"><img src='{{(projectToDisplay | async)?.image}}' alt="" /></div>
+By: {{(projectToDisplay | async)?.creator}}
+{{(projectToDisplay | async)?.description}}
+{{(projectToDisplay | async)?.goal}}
+{{(projectToDisplay | async)?.daysLeft}}
