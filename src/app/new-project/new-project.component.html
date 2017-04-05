@@ -17,12 +17,12 @@
         <input #newImage type="text" placeholder="Image">
       </div>
       <div class="">
-        <input #newGoal type="text" placeholder="Goal">
+        <input #newGoal type="number" placeholder="Goal">
       </div>
       <div class="">
-        <input #newDaysLeft type="text" placeholder="How many days before deadline?">
+        <input #newDaysLeft type="number" placeholder="How many days before deadline?">
       </div>
-      <button (click)="submitForm(newTitle.value, newCreator.value, newDescription.value, newImage.value, newGoal.value, newDaysLeft.value); newTitle.value=''; newCreator.value=''; newImage.value=''; newDescription.value=''; newGoal.value=''; newDaysLeft.value=''">Add</button>
+      <button (click)="submitForm(newTitle.value, newCreator.value, newDescription.value, newImage.value, newGoal.value, newDaysLeft.value); newTitle.value=''; newCreator.value=''; newImage.value=''; newDescription.value=''; newGoal.value=''; newDaysLeft.value=''" routerLink="/">Add</button>
     </div>
   </div>
 </div>
