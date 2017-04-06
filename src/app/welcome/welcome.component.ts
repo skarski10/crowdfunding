@@ -15,6 +15,7 @@ import { Project } from '../project.model';
 
 export class WelcomeComponent {
   projects:FirebaseListObservable<any[]> = this.projectService.getProjects();
+  currentRoute: string = this.router.url;
 
   constructor(private router: Router, private projectService: ProjectService) { }
 

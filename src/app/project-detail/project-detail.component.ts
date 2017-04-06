@@ -14,7 +14,7 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 })
 export class ProjectDetailComponent implements OnInit {
   projectId: string;
-  projectToDisplay: FirebaseObjectObservable<any>;
+  projectToDisplay: Project;
 
   constructor(private route: ActivatedRoute, private location: Location, private projectService: ProjectService, private router: Router) { }
 
@@ -22,12 +22,14 @@ export class ProjectDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
     });
-    this.projectToDisplay = this.projectService.getProjectById(this.projectId);
+     this.projectService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {
+     this.projectToDisplay = new Project
+     (dataLastEmittedFromObserver.title,
+     dataLastEmittedFromObserver.creator,
+     dataLastEmittedFromObserver.description,
+     dataLastEmittedFromObserver.image,
+     dataLastEmittedFromObserver.goal,
+     dataLastEmittedFromObserver.daysLeft)
+   })
   }
-
-  clickEditButton(clickedProject) {
-    console.log(this.projectId);
-    this.router.navigate(['projects/edit', this.projectId]);
-  }
-
 }

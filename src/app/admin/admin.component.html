@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Create a new project</h2>
+  </div>
+  <div class="panel-body">
+    <div class="">
+      <div class="">
+        <input #newTitle type="text" placeholder="Title">
+      </div>
+      <div class="">
+        <input #newCreator type="text" placeholder="Creator">
+      </div>
+      <div class="">
+        <textarea #newDescription type="text" placeholder="Project Description"></textarea>
+      </div>
+      <div class="">
+        <input #newImage type="text" placeholder="Image">
+      </div>
+      <div class="">
+        <input #newGoal type="number" placeholder="Goal">
+      </div>
+      <div class="">
+        <input #newDaysLeft type="number" placeholder="How many days before deadline?">
+      </div>
+      <button (click)="submitForm(newTitle.value, newCreator.value, newDescription.value, newImage.value, newGoal.value, newDaysLeft.value); newTitle.value=''; newCreator.value=''; newImage.value=''; newDescription.value=''; newGoal.value=''; newDaysLeft.value=''" routerLink="/">Add</button>
+    </div>
+  </div>
+</div>
+
+<div class="">
+  <app-welcome></app-welcome>
+</div>

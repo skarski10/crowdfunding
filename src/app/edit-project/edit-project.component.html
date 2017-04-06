@@ -1,3 +1,23 @@
-<p>
-  edit-project works!
-</p>
+  <!-- <button type="button" name="button" class="btn btn-warning" (click)="clickEditButton(showEditForm)">Edit</button> -->
+  <h2>{{(editProject | async)?.title}}</h2>
+<form>
+  <div class="form-group">
+    <input class="form-control" [(ngModel)]="editProject.title" name="title">
+  </div>
+  <div class="form-group">
+    <input class="form-control" [(ngModel)]="editProject.creator" name="creator">
+  </div>
+  <div class="form-group">
+    <input class="form-control" [(ngModel)]="editProject.description" name="description">
+  </div>
+  <div class="form-group">
+    <input class="form-control" [(ngModel)]="editProject.image"name="image">
+  </div>
+  <div class="form-group">
+    <input class="form-control" [(ngModel)]="editProject.goal" name="goal">
+  </div>
+  <div class="form-group">
+    <input class="form-control" [(ngModel)]="editProject.daysLeft" name="days-left">
+  </div>
+  <button type="button" name="button" class="btn btn-warning" (click)="beginUpdatingProject(editProject)">Update</button>
+</form>

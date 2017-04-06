@@ -1,19 +1,14 @@
-
 <h1>
-  {{(projectToDisplay | async)?.title}}
+  {{projectToDisplay?.title}}
 </h1>
-<h2>By: {{(projectToDisplay | async)?.creator}}</h2>
+<h2>By: {{projectToDisplay?.creator}}</h2>
 <div class="row">
   <div class="col-md-9">
-
-    <div class="projectImage"><img src='{{(projectToDisplay | async)?.image}}' alt="" /></div>
-
-    {{(projectToDisplay | async)?.description}}
-
+    <div class="projectImage"><img src='{{projectToDisplay?.image}}' alt="" /></div>
+    {{projectToDisplay?.description}}
   </div>
   <div class="col-md-3">
-    Goal: {{(projectToDisplay | async)?.goal}}
-    Days Reamining: {{(projectToDisplay | async)?.daysLeft}}
-    <button type="button" name="button" class="btn btn-warning" (click)="clickEditButton(projectToDisplay)">Edit</button>
+    Goal: {{projectToDisplay?.goal}}
+    Days Reamining: {{projectToDisplay?.daysLeft}}
   </div>
 </div>
