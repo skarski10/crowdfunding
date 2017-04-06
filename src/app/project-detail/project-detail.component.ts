@@ -3,7 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Project } from '../project.model';
 import { ProjectService } from '../project.service';
-import { FirebaseObjectObservable } from 'angularfire2';
+import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { FirebaseObjectObservable } from 'angularfire2';
 })
 export class ProjectDetailComponent implements OnInit {
   projectId: string;
-  projectToDisplay;
+  projectToDisplay: FirebaseObjectObservable<any>;
 
   constructor(private route: ActivatedRoute, private location: Location, private projectService: ProjectService, private router: Router) { }
 
@@ -26,7 +26,8 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   clickEditButton(clickedProject) {
-    this.router.navigate(['projects/edit', clickedProject.$key]);
+    console.log(this.projectId);
+    this.router.navigate(['projects/edit', this.projectId]);
   }
 
 }
