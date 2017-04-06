@@ -5,7 +5,6 @@ import { Project } from '../project.model';
 import { ProjectService } from '../project.service';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
-//
 @Component({
   selector: 'app-edit-project',
   templateUrl: './edit-project.component.html',
@@ -14,15 +13,13 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 })
 export class EditProjectComponent implements OnInit{
   @Input() editProject;
-//
+
   constructor(private projectService: ProjectService) { }
-//
+
   ngOnInit() {
-    console.log(this.editProject);
  }
 
  beginUpdatingProject(projectToEdit){
    this.projectService.editProject(projectToEdit);
-   console.log(projectToEdit);
  }
 }

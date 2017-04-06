@@ -2,11 +2,11 @@
 
 <div *ngFor="let project of projects | async" class="panel panel-default">
   <div class="panel-body">
-    <span (click)="goToDetailPage(project)">{{project.title}}</span><br>
-    {{project.creator}}<br>
-    <img src="{{project.image}}" alt="" />
+    <span (click)="goToDetailPage(project)">{{project?.title}}</span><br>
+    {{project?.creator}}<br>
+    <img src="{{project?.image}}" alt="" />
     <div *ngIf="currentRoute === '/admin'">
-      {{project.title}}
+      {{project?.title}} | {{project?.creator}}
       <hr>
       <app-edit-project [editProject]="project"></app-edit-project>
     </div>

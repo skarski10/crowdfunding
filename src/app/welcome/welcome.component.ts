@@ -14,10 +14,14 @@ import { Project } from '../project.model';
 })
 
 export class WelcomeComponent {
-  projects:FirebaseListObservable<any[]> = this.projectService.getProjects();
+  projects:FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
   constructor(private router: Router, private projectService: ProjectService) { }
+
+  ngOnInit(){
+  this.projects = this.projectService.getProjects();
+}
 
   goToDetailPage(clickedProject){
     this.router.navigate(['projects', clickedProject.$key]);

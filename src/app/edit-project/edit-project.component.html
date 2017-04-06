@@ -1,5 +1,5 @@
   <!-- <button type="button" name="button" class="btn btn-warning" (click)="clickEditButton(showEditForm)">Edit</button> -->
-  <h2>{{(editProject | async)?.title}}</h2>
+  <h2>{{editProject?.title}}</h2>
 <form>
   <div class="form-group">
     <input class="form-control" [(ngModel)]="editProject.title" name="title">
@@ -19,5 +19,5 @@
   <div class="form-group">
     <input class="form-control" [(ngModel)]="editProject.daysLeft" name="days-left">
   </div>
-  <button type="button" name="button" class="btn btn-warning" (click)="beginUpdatingProject(editProject)">Update</button>
+  <button class="btn btn-warning" (click)="beginUpdatingProject(editProject)">Update</button>
 </form>
